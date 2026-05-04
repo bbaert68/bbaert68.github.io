@@ -4,8 +4,6 @@ const lightbox = document.querySelector('.lightbox');
 const lightboxBackdrop = document.querySelector('.lightbox-backdrop');
 const lightboxPanel = document.querySelector('.lightbox-panel');
 const lightboxImage = document.querySelector('.lightbox-image');
-const lightboxTitle = document.querySelector('.lightbox-caption .caption-title');
-const lightboxSubtitle = document.querySelector('.lightbox-caption .caption-subtitle');
 const lightboxClose = document.querySelector('.lightbox-close');
 const lightboxPrev = document.querySelector('.lightbox-prev');
 const lightboxNext = document.querySelector('.lightbox-next');
@@ -42,8 +40,6 @@ const renderGallery = (category) => {
 const showLightboxItem = (item) => {
   lightboxImage.src = item.src;
   lightboxImage.alt = item.alt;
-  lightboxTitle.textContent = item.title;
-  lightboxSubtitle.textContent = item.subtitle;
 };
 
 const openLightbox = (index) => {
