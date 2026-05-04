@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BBaert Photography</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="#">BBaert Photography</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#portfolio">Portfolio</a>
+          <a href="#categories">Categories</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Photography portfolio</p>
+          <h1>Architecture, street, nature, and studio photography.</h1>
+          <p class="hero-copy">
+            A semi-professional photography portfolio built to showcase distinct categories and highlight your best work.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#portfolio">View gallery</a>
+            <a class="button secondary" href="#contact">Book a session</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="categories" class="section category-preview">
+        <div class="section-header">
+          <h2>Photography categories</h2>
+          <p>Organize your work by the type of photography your clients care about most.</p>
+        </div>
+        <div class="category-grid">
+          <article class="category-card">
+            <span class="category-label">01</span>
+            <h3>Architecture</h3>
+            <p>Clean architectural imagery that balances structure, light, and space.</p>
+          </article>
+          <article class="category-card">
+            <span class="category-label">02</span>
+            <h3>Street</h3>
+            <p>Dynamic street photography capturing people, place, and everyday motion.</p>
+          </article>
+          <article class="category-card">
+            <span class="category-label">03</span>
+            <h3>Nature</h3>
+            <p>Natural landscapes and outdoor scenes with dramatic atmosphere.</p>
+          </article>
+          <article class="category-card">
+            <span class="category-label">04</span>
+            <h3>Studio</h3>
+            <p>Controlled studio work for portraits, products, and creative projects.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="portfolio" class="section portfolio">
+        <div class="section-header">
+          <h2>Portfolio highlights</h2>
+          <p>Filter by category to see the style that matches your next project.</p>
+        </div>
+
+        <div class="filter-buttons" role="tablist" aria-label="Portfolio category filter">
+          <button class="filter-button active" data-filter="all" type="button">All</button>
+          <button class="filter-button" data-filter="architecture" type="button">Architecture</button>
+          <button class="filter-button" data-filter="street" type="button">Street</button>
+          <button class="filter-button" data-filter="nature" type="button">Nature</button>
+          <button class="filter-button" data-filter="studio" type="button">Studio</button>
+        </div>
+
+        <div class="gallery-grid"></div>
+      </section>
+
+      <section id="projects" class="section projects">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <p>Selected photography projects that show the depth and direction of my creative work.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>Urban Architecture Series</h3>
+            <p>A study of geometric structures, textures, and architectural detail across modern buildings.</p>
+          </article>
+          <article class="project-card">
+            <h3>Street Motion Collection</h3>
+            <p>Documenting people and movement in city life with strong contrast and candid composition.</p>
+          </article>
+          <article class="project-card">
+            <h3>Nature & Landscape Studies</h3>
+            <p>Atmospheric landscape work capturing light, mood, and the quiet power of natural scenes.</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="lightbox" aria-hidden="true">
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Image preview">
+          <button class="lightbox-close" type="button" aria-label="Close image view">×</button>
+          <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">‹</button>
+          <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">›</button>
+          <img class="lightbox-image" src="" alt="" />
+          <div class="lightbox-caption">
+            <p class="caption-title"></p>
+            <p class="caption-subtitle"></p>
+          </div>
+        </div>
+      </div>
+
+      <section id="contact" class="section about split">
+        <div>
+          <h2>Let's work together</h2>
+          <p>
+            I create photographic work for individuals, brands, and spaces. Whether you need architecture, street, nature, or studio photography, I can help you bring the story to life.
+          </p>
+          <p>
+            Reach out to discuss availability, pricing, and the best category for your next project.
+          </p>
+        </div>
+        <div class="contact-card">
+          <p class="contact-label">Contact</p>
+          <p>Email: <a href="mailto:bbaert@gmail.com"></a></p>
+          <p>Phone: <a href="tel:+32496690290">+32 496 690290</a></p>
+          <p>Location: Kortrijk, BE</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 BBaert Photography. Portfolio website for category-based storytelling.</p>
+    </footer>
+
+    <script id="gallery-manifest" type="application/json">
+      {
+        "architecture": [
+          {"src": "architecture/A01.jpg", "alt": "A01", "title": "A01", "subtitle": "Portfolio image"},
+          {"src": "architecture/A02.jpg", "alt": "A02", "title": "A02", "subtitle": "Portfolio image"},
+          {"src": "architecture/A03.jpg", "alt": "A03", "title": "A03", "subtitle": "Portfolio image"},
+          {"src": "architecture/A04.jpg", "alt": "A04", "title": "A04", "subtitle": "Portfolio image"},
+          {"src": "architecture/A05.jpg", "alt": "A05", "title": "A05", "subtitle": "Portfolio image"},
+          {"src": "architecture/A06.jpg", "alt": "A06", "title": "A06", "subtitle": "Portfolio image"},
+          {"src": "architecture/A07.jpg", "alt": "A07", "title": "A07", "subtitle": "Portfolio image"},
+          {"src": "architecture/A08.jpg", "alt": "A08", "title": "A08", "subtitle": "Portfolio image"},
+          {"src": "architecture/A09.jpg", "alt": "A09", "title": "A09", "subtitle": "Portfolio image"},
+          {"src": "architecture/A10.jpg", "alt": "A10", "title": "A10", "subtitle": "Portfolio image"},
+          {"src": "architecture/A12.jpg", "alt": "A12", "title": "A12", "subtitle": "Portfolio image"},
+          {"src": "architecture/A13.jpg", "alt": "A13", "title": "A13", "subtitle": "Portfolio image"},
+          {"src": "architecture/A15.jpg", "alt": "A15", "title": "A15", "subtitle": "Portfolio image"},
+          {"src": "architecture/A16.jpg", "alt": "A16", "title": "A16", "subtitle": "Portfolio image"},
+          {"src": "architecture/A17.jpg", "alt": "A17", "title": "A17", "subtitle": "Portfolio image"}
+        ],
+        "street": [
+          {"src": "street/S01.jpg", "alt": "S01", "title": "S01", "subtitle": "Portfolio image"},
+          {"src": "street/S02.jpg", "alt": "S02", "title": "S02", "subtitle": "Portfolio image"},
+          {"src": "street/S03.jpg", "alt": "S03", "title": "S03", "subtitle": "Portfolio image"},
+          {"src": "street/S04.jpg", "alt": "S04", "title": "S04", "subtitle": "Portfolio image"},
+          {"src": "street/S05.jpg", "alt": "S05", "title": "S05", "subtitle": "Portfolio image"},
+          {"src": "street/S06.jpg", "alt": "S06", "title": "S06", "subtitle": "Portfolio image"},
+          {"src": "street/S07.jpg", "alt": "S07", "title": "S07", "subtitle": "Portfolio image"},
+          {"src": "street/S08.jpg", "alt": "S08", "title": "S08", "subtitle": "Portfolio image"},
+          {"src": "street/S09.jpg", "alt": "S09", "title": "S09", "subtitle": "Portfolio image"},
+          {"src": "street/S10.jpg", "alt": "S10", "title": "S10", "subtitle": "Portfolio image"},
+          {"src": "street/S1001.jpg", "alt": "S1001", "title": "S1001", "subtitle": "Portfolio image"},
+          {"src": "street/S11.jpg", "alt": "S11", "title": "S11", "subtitle": "Portfolio image"},
+          {"src": "street/S12.jpg", "alt": "S12", "title": "S12", "subtitle": "Portfolio image"},
+          {"src": "street/S13.jpg", "alt": "S13", "title": "S13", "subtitle": "Portfolio image"},
+          {"src": "street/S14.jpg", "alt": "S14", "title": "S14", "subtitle": "Portfolio image"},
+          {"src": "street/S15.jpg", "alt": "S15", "title": "S15", "subtitle": "Portfolio image"},
+          {"src": "street/S16.jpg", "alt": "S16", "title": "S16", "subtitle": "Portfolio image"},
+          {"src": "street/S17.jpg", "alt": "S17", "title": "S17", "subtitle": "Portfolio image"},
+          {"src": "street/S18.jpg", "alt": "S18", "title": "S18", "subtitle": "Portfolio image"},
+          {"src": "street/S19.jpg", "alt": "S19", "title": "S19", "subtitle": "Portfolio image"}
+        ],
+        "nature": [
+          {"src": "nature/N01.jpg", "alt": "N01", "title": "N01", "subtitle": "Portfolio image"},
+          {"src": "nature/N02.jpg", "alt": "N02", "title": "N02", "subtitle": "Portfolio image"},
+          {"src": "nature/N03.jpg", "alt": "N03", "title": "N03", "subtitle": "Portfolio image"},
+          {"src": "nature/N04.jpg", "alt": "N04", "title": "N04", "subtitle": "Portfolio image"},
+          {"src": "nature/N05.jpg", "alt": "N05", "title": "N05", "subtitle": "Portfolio image"},
+          {"src": "nature/N06.jpg", "alt": "N06", "title": "N06", "subtitle": "Portfolio image"},
+          {"src": "nature/N07.jpg", "alt": "N07", "title": "N07", "subtitle": "Portfolio image"},
+          {"src": "nature/N08.jpg", "alt": "N08", "title": "N08", "subtitle": "Portfolio image"},
+          {"src": "nature/N09.jpg", "alt": "N09", "title": "N09", "subtitle": "Portfolio image"},
+          {"src": "nature/N0901.jpg", "alt": "N0901", "title": "N0901", "subtitle": "Portfolio image"},
+          {"src": "nature/N10.jpg", "alt": "N10", "title": "N10", "subtitle": "Portfolio image"},
+          {"src": "nature/N11.jpg", "alt": "N11", "title": "N11", "subtitle": "Portfolio image"},
+          {"src": "nature/N13.jpg", "alt": "N13", "title": "N13", "subtitle": "Portfolio image"},
+          {"src": "nature/N14.jpg", "alt": "N14", "title": "N14", "subtitle": "Portfolio image"},
+          {"src": "nature/N15.jpg", "alt": "N15", "title": "N15", "subtitle": "Portfolio image"},
+          {"src": "nature/N16.jpg", "alt": "N16", "title": "N16", "subtitle": "Portfolio image"},
+          {"src": "nature/N17.jpg", "alt": "N17", "title": "N17", "subtitle": "Portfolio image"},
+          {"src": "nature/S18.jpg", "alt": "S18", "title": "S18", "subtitle": "Portfolio image"},
+          {"src": "nature/S19.jpg", "alt": "S19", "title": "S19", "subtitle": "Portfolio image"}
+        ],
+        "studio": [
+          {"src": "studio/S02.jpg", "alt": "S02", "title": "S02", "subtitle": "Portfolio image"},
+          {"src": "studio/S03.jpg", "alt": "S03", "title": "S03", "subtitle": "Portfolio image"}
+        ]
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
