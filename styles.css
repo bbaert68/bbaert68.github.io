@@ -82,10 +82,13 @@ select {
 
 .hero {
   display: grid;
-  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
   min-height: 90vh;
   padding: 0 1.5rem 4rem;
-  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .hero::after {
@@ -101,6 +104,20 @@ select {
   position: relative;
   max-width: 720px;
   z-index: 1;
+  text-align: left;
+}
+
+.hero-image {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .eyebrow {
@@ -351,10 +368,6 @@ h1 {
   background: #05070b;
 }
 
-.lightbox-caption {
-  padding: 1.5rem 1.75rem 2rem;
-}
-
 .lightbox-close,
 .lightbox-nav {
   position: absolute;
@@ -393,16 +406,6 @@ h1 {
   top: 50%;
   right: 1rem;
   transform: translateY(-50%);
-}
-
-.lightbox-caption .caption-title {
-  margin: 0 0 0.4rem;
-  font-size: 1.1rem;
-}
-
-.lightbox-caption .caption-subtitle {
-  margin: 0;
-  color: var(--muted);
 }
 
 .gallery-item {
@@ -473,10 +476,6 @@ h1 {
   background: #05070b;
 }
 
-.lightbox-caption {
-  padding: 1.5rem 1.75rem 2rem;
-}
-
 .lightbox-close {
   position: absolute;
   top: 1rem;
@@ -497,16 +496,6 @@ h1 {
 .lightbox-close:hover,
 .lightbox-close:focus-visible {
   background: rgba(255, 255, 255, 0.16);
-}
-
-.lightbox-caption .caption-title {
-  margin: 0 0 0.4rem;
-  font-size: 1.1rem;
-}
-
-.lightbox-caption .caption-subtitle {
-  margin: 0;
-  color: var(--muted);
 }
 
 .gallery-item {
@@ -587,7 +576,12 @@ h1 {
   }
 
   .hero {
+    grid-template-columns: 1fr;
     min-height: 80vh;
+  }
+
+  .hero-content {
+    text-align: center;
   }
 }
 
