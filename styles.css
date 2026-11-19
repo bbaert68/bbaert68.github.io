@@ -81,10 +81,10 @@ select {
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  align-items: start;
+  align-content: start;
   gap: 3rem;
-  min-height: 90vh;
-  padding: 0 1.5rem 4rem;
+  padding: 4rem 1.5rem 4rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -103,6 +103,9 @@ select {
   max-width: 720px;
   z-index: 1;
   text-align: left;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-image {
@@ -142,9 +145,10 @@ h1 {
 
 .hero-actions {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .button {
