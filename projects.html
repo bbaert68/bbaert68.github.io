@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects — BBaert Photography</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="index.html">BBaert Photography</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="portfolio.html">Portfolio</a>
+          <a href="projects.html" aria-current="page">Projects</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="projects" class="section projects">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <p>Selected photography projects grouped by client or theme. Use the filters to view a project category.</p>
+        </div>
+
+        <div class="filter-buttons" role="tablist" aria-label="Project category filter">
+          <button class="filter-button project-filter-button active" data-filter="4degrees" type="button">4degrees</button>
+          <button class="filter-button project-filter-button" data-filter="emplooi" type="button">Emplooi</button>
+        </div>
+
+        <div class="gallery-grid project-gallery-grid"></div>
+      </section>
+
+      <div class="lightbox" aria-hidden="true">
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Image preview">
+          <button class="lightbox-close" type="button" aria-label="Close image view">×</button>
+          <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">‹</button>
+          <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">›</button>
+          <img class="lightbox-image" src="" alt="" />
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p><a href="index.html">Back to home</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
