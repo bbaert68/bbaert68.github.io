@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trips — BBaert Photography</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="index.html">BBaert Photography</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="portfolio.html">Portfolio</a>
+          <a href="projects.html">Projects</a>
+          <a href="trips.html" aria-current="page">Trips</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="trips" class="section trips">
+        <div class="section-header">
+          <h2>Trips</h2>
+          <p>Photography from journeys and destinations.</p>
+        </div>
+
+        <div class="filter-buttons" role="tablist" aria-label="Trip category filter">
+          <button class="filter-button trip-filter-button active" data-filter="Cornwall" type="button">Cornwall</button>
+          <button class="filter-button trip-filter-button" data-filter="Krugerpark-Birds" type="button">Krugerpark-Birds</button>
+          <button class="filter-button trip-filter-button" data-filter="Lapland" type="button">Lapland</button>
+        </div>
+
+        <div class="gallery-grid trips-grid"></div>
+
+        <div class="lightbox" aria-hidden="true">
+          <div class="lightbox-backdrop"></div>
+          <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Image preview">
+            <button class="lightbox-close" type="button" aria-label="Close image view">×</button>
+            <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">‹</button>
+            <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">›</button>
+            <img class="lightbox-image" src="" alt="" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p><a href="index.html">Back to home</a></p>
+    </footer>
+
+    <script>
+      const tripButtons = document.querySelectorAll('.trip-filter-button');
+      const tripsGrid = document.querySelector('.trips-grid');
+      const lightbox = document.querySelector('.lightbox');
+      const lightboxImage = document.querySelector('.lightbox-image');
+      let tripEntries = [];
+      let lightboxIndex = 0;
+
+      const trips = {
+        Cornwall: Array.from({ length: 17 }, (_, index) => {
+          const number = String(index + 1).padStart(3, '0');
+          return { src: `trips/Cornwall/Cornwall-${number}.jpg`, alt: `Cornwall ${index + 1}` };
+        }),
+        'Krugerpark-Birds': Array.from({ length: 10 }, (_, index) => ({
+          src: `trips/Krugerpark-Birds/Bird-${index + 1}.jpg`,
+          alt: `Krugerpark bird ${index + 1}`
+        })),
+        Lapland: Array.from({ length: 3 }, (_, index) => ({
+          src: `trips/Lapland/BBaert-${index + 1}.jpg`,
+          alt: `Lapland ${index + 1}`
+        }))
+      };
+
+      const showTrip = (category) => {
+        tripEntries = trips[category] || [];
+        tripsGrid.innerHTML = '';
+
+        tripEntries.forEach((item, index) => {
+          const card = document.createElement('article');
+          card.className = 'gallery-item';
+          card.innerHTML = `<img src="${item.src}" alt="${item.alt}" />`;
+          card.addEventListener('click', () => openLightbox(index));
+          tripsGrid.appendChild(card);
+        });
+      };
+
+      const openLightbox = (index) => {
+        lightboxIndex = index;
+        lightboxImage.src = tripEntries[index].src;
+        lightboxImage.alt = tripEntries[index].alt;
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeLightbox = () => {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImage.src = '';
+        document.body.style.overflow = '';
+      };
+
+      tripButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          tripButtons.forEach((item) => item.classList.remove('active'));
+          button.classList.add('active');
+          showTrip(button.dataset.filter);
+        });
+      });
+
+      document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+      document.querySelector('.lightbox-backdrop').addEventListener('click', closeLightbox);
+      document.querySelector('.lightbox-prev').addEventListener('click', (event) => {
+        event.stopPropagation();
+        lightboxIndex = (lightboxIndex - 1 + tripEntries.length) % tripEntries.length;
+        openLightbox(lightboxIndex);
+      });
+      document.querySelector('.lightbox-next').addEventListener('click', (event) => {
+        event.stopPropagation();
+        lightboxIndex = (lightboxIndex + 1) % tripEntries.length;
+        openLightbox(lightboxIndex);
+      });
+
+      showTrip('Cornwall');
+    </script>
+  </body>
+</html>
